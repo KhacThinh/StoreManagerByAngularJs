@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "email-existence": "^0.1.6",
+    "json-server": "^0.17.3"
+  }
+}

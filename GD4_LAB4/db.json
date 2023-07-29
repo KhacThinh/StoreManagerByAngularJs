@@ -1,0 +1,112 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "accounts": [
+    {
+      "id": "2",
+      "ten": "Honda Civic 123456",
+      "loai": "Xe điện",
+      "hang": "Honda",
+      "gia": 450000000
+    },
+    {
+      "id": "3",
+      "ten": "Mercedes-Benz C-Class",
+      "loai": "Xe ô tô",
+      "hang": "Mercedes-Benz",
+      "gia": 800000000
+    },
+    {
+      "id": "4",
+      "ten": "BMW X5",
+      "loai": "Xe ô tô",
+      "hang": "BMW",
+      "gia": 900000000
+    },
+    {
+      "id": "5",
+      "ten": "Audi Q7",
+      "loai": "Xe ô tô",
+      "hang": "Audi",
+      "gia": 1200000000
+    },
+    {
+      "id": "6",
+      "ten": "Ford Mustang",
+      "loai": "Xe ô tô",
+      "hang": "Ford",
+      "gia": 700000000
+    },
+    {
+      "id": "7",
+      "ten": "Chevrolet Cruze",
+      "loai": "Xe ô tô",
+      "hang": "Chevrolet",
+      "gia": 400000000
+    },
+    {
+      "id": "8",
+      "ten": "Yamaha Exciter",
+      "loai": "Xe máy",
+      "hang": "Yamaha",
+      "gia": 50000000
+    },
+    {
+      "id": "9",
+      "ten": "Honda Wave Alpha",
+      "loai": "Xe máy",
+      "hang": "Honda",
+      "gia": 30000000
+    },
+    {
+      "id": "11",
+      "ten": "VinFast Klara",
+      "loai": "Xe điện",
+      "hang": "VinFast",
+      "gia": 40000000
+    },
+    {
+      "id": "12",
+      "ten": "Energica Ego",
+      "loai": "Xe điện",
+      "hang": "Energica",
+      "gia": 200000000
+    },
+    {
+      "id": "13",
+      "ten": "sdfghj",
+      "loai": "Xe điện",
+      "hang": "adfgh",
+      "gia": 3
+    },
+    {
+      "id": "78",
+      "ten": "sdfghj",
+      "loai": "Xe điện",
+      "hang": "adfgh",
+      "gia": 3
+    },
+    {
+      "id": "1234",
+      "ten": "1234",
+      "loai": "Xe điện",
+      "hang": "13245",
+      "gia": 2345
+    }
+  ]
+}

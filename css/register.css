@@ -1,0 +1,8 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #ececec;
+}
+.form-signup{
+    margin: 0px auto;
+    max-width: 400px;
+}

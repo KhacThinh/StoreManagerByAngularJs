@@ -1,0 +1,2 @@
+muốn chạy được thì phải vào template rồi nhập chuỗi này vào thì json mới bắt đầu khởi chạy
+/** json-server --watch db.json **/

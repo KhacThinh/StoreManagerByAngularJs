@@ -1,0 +1,15 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #ececec;
+    background-image: url("../images/1.png");
+}
+
+.form-signup{
+    background-color: hsla(218, 42%, 50%, 0.334);
+    /* background: transparent; */
+    backdrop-filter: blur(20px);
+}
+
+::placeholder{
+    font-size: 16px;
+}

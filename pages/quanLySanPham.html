@@ -1,0 +1,249 @@
+<section id="collection" class="py-5">
+    <div class="container">
+        <div class="title text-center pt-5">
+            <h2 class="position-relative d-inline-block">QUẢN LÍ SẢN PHẨM</h2>
+        </div>
+        <div class="row">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary my-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <i class="bi bi-bag-plus-fill"></i> <span>THÊM SẢN PHẨM</span>
+            </button>
+
+            <!-- Modal -->
+            <div class="modal modal-xl" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Thông Tin Sản Phẩm</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form ng-submit="onSubmit($event)">
+                                <div class="mb-3">
+                                    <!-- <label for="recipient-name" class="col-form-label">Recipient:</label> -->
+                                    <input ng-model="product.id" type="number" class="form-control" id="recipient-name"
+                                        placeholder="ID" required>
+                                </div>
+                                <div class="mb-3">
+                                    <!-- <label for="recipient-name" class="col-form-label">Recipient:</label> -->
+                                    <input ng-model="product.tenSP" type="text" class="form-control" id="recipient-name"
+                                        placeholder="Tên Sản Phẩm" required>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="recipient-name" class="col-form-label">Giá Nhập:</label>
+                                        <input ng-model="product.giaNhap" type="number" class="form-control"
+                                            id="recipient-name" placeholder="Giá Nhập" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="recipient-name" class="col-form-label">Giá Bán:</label>
+                                        <input ng-model="product.giaBan" type="number" class="form-control"
+                                            id="recipient-name" placeholder="Giá Bán" required>
+                                    </div>
+                                </div>
+                                <div class=" row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="recipient-name" class="col-form-label">Số
+                                            Lượng</label>
+                                        <input type="number" ng-model="product.soLuong" class="form-control"
+                                            id="recipient-name" min="0">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="recipient-name" class="col-form-label">Ngày Nhập Kho</label>
+                                        <input ng-model="product.ngayNhapHang" ng-model-options="{ getterSetter: true }"
+                                            type="text" class="form-control" id="recipient-name" required
+                                            placeholder="Định dạng yyyy-MM-dd">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-8">
+                                        <label  for="recipient-name"
+                                            class="col-form-label">File Image</label>
+                                        <input ng-model="product.urlImage" type="text" class="form-control" id="recipient-name" placeholder="Đường dẫn ảnh">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="recipient-name" class="col-form-label">Trạng Thái</label>
+                                        <select ng-model="product.trangThai" class="form-select" aria-label="Default select example">
+                                            <option value="Đang Bán" >Đang Bán</option>
+                                            <option value="Ngừng Bán">Ngừng Bán</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Thêm Sản Phẩm</button>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Thoát</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <table class="table table-hover mb-5">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">TÊN SẢN PHẨM</th>
+                        <th scope="col">GIÁ NHẬP</th>
+                        <th scope="col">GIÁ BÁN</th>
+                        <th scope="col">SỐ LƯỢNG</th>
+                        <th scope="col">NGÀY NHẬP</th>
+                        <!-- <th scope="col">ĐƯỜNG DẪN ẢNH</th> -->
+                        <th scope="col">TRẠNG THÁI</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="acc in lstProduct">
+                        <th scope="row">{{acc.id}}</th>
+                        <td>{{acc.tenSP}}</td>
+                        <td>{{acc.giaNhap}}</td>
+                        <td>{{acc.giaBan}}</td>
+                        <td>{{acc.soLuong}}</td>
+                        <td>{{acc.ngayNhapHang}}</td>
+                        <!-- <td>{{acc.urlImage}}</td> -->
+                        <td>{{acc.trangThai}}</td>
+                        <td><button ng-click="select($index)" class="btn btn-warning">SỬA</button></td>
+                        <td><button ng-click="delete($index)" class="btn btn-warning">Xóa</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</section>
+
+<section id="collection" class="py-5">
+    <div class="container">
+        <div class="title text-center pt-5">
+            <h2 class="position-relative d-inline-block">QUẢN LÍ NHÂN VIÊN</h2>
+        </div>
+        <div class="row my-5">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#themNhanVien">
+                <i class="bi bi-person-plus-fill"></i> <span>THÊM NHÂN VIÊN</span>
+            </button>
+
+            <!-- Modal -->
+            <div class="modal modal-xl" id="themNhanVien" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Thông Tin Nhân Viên</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="mb-3">
+                                    <!-- <label for="recipient-name" class="col-form-label">Recipient:</label> -->
+                                    <input type="number" class="form-control" id="recipient-name"
+                                        placeholder="Mã Nhân Viên" required>
+                                </div>
+                                <div class="mb-3">
+                                    <!-- <label for="recipient-name" class="col-form-label">Recipient:</label> -->
+                                    <input type="text" class="form-control" id="recipient-name"
+                                        placeholder="Tên Nhân Viên" required>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="gioiTinh" id="inlineRadio1"
+                                        value="option1">
+                                    <label class="form-check-label" for="inlineRadio1">Nam</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="gioiTinh" id="inlineRadio2"
+                                        value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">Nữ</label>
+                                </div>
+
+                                <div class=" row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="recipient-name" class="col-form-label">Số Điện Thoại</label>
+                                        <input type="number" class="form-control" id="recipient-name" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="recipient-name" class="col-form-label">Ngày Sinh</label>
+                                        <input type="date" class="form-control" id="recipient-name" required>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-8">
+                                        <label for="exampleFormControlTextarea1" class="form-label">Địa Chỉ</label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1"
+                                            rows="3"></textarea>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="recipient-name" class="col-form-label">Trạng Thái</label>
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option value="Đang Làm Việc">Đang Làm Việc</option>
+                                            <option value="Nghỉ Việc">Nghỉ Việc</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <table class="table table-hover mb-5 table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Mã Nhân Viên</th>
+                    <th scope="col">TÊN Nhân Viên</th>
+                    <th scope="col">Giới Tính</th>
+                    <th scope="col">Ngày Sinh</th>
+                    <th scope="col">Số Điện Thoại</th>
+                    <th scope="col">Địa Chỉ</th>
+                    <th scope="col">TRẠNG THÁI</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td><button type="button" class="btn btn-warning">SỬA</button></td>
+                    <td><button type="button" class="btn btn-warning">XÓA</button></td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td><button type="button" class="btn btn-warning">SỬA</button></td>
+                    <td><button type="button" class="btn btn-warning">XÓA</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+    integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+    crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">

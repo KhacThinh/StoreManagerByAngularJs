@@ -1,0 +1,232 @@
+<div class="product-detail">
+  <div class="product-images">
+    <div class="main-image">
+      <img ng-src="{{product.urlImage}}" alt="Product Image">
+    </div>
+    <div class="thumbnail-images">
+      <div class="thumbnail-image">
+        <img ng-src="{{product.urlImage}}" alt="Product Thumbnail">
+      </div>
+      <div class="thumbnail-image">
+        <img src="./images/shirt/4.png" alt="Product Thumbnail">
+      </div>
+      <div class="thumbnail-image">
+        <img src="./images/shirt/5.png" alt="Product Thumbnail">
+      </div>
+    </div>
+  </div>
+  <div class="product-info">
+    <h2 class="product-name">{{product.tenSP}}</h2>
+    <p class="product-rating">5 Sao</p>
+    <p class="product-price">Price: {{product.giaBan}} đồng</p>
+    <p class="product-style">Số Lượng: {{product.soLuong}}</p>
+    <div class="product-size">
+      <p>Size:</p>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" id="size1" value="Size 1" name="size">
+        <label class="form-check-label" for="size1">S</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" id="size2" value="Size 2" name="size">
+        <label class="form-check-label" for="size2">M</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" id="size3" value="Size 3" name="size">
+        <label class="form-check-label" for="size3">L</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" id="size4" value="Size 4" name="size">
+        <label class="form-check-label" for="size4">XL</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" id="size5" value="Size 5" name="size">
+        <label class="form-check-label" for="size5">2XL</label>
+      </div>
+    </div>
+    <div class="product-quantity">
+      <p>Quantity:</p>
+      <div class="quantity-controls">
+        <button class="minus">-</button>
+        <input class="quantity-input" type="number" value="1" min="1">
+        <button class="plus">+</button>
+      </div>
+    </div>
+    <div class="product-buttons">
+      <button class="add-to-cart">Add to Cart</button>
+      <button class="buy-now">Buy Now</button>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  // JavaScript code here
+  document.addEventListener("DOMContentLoaded", function () {
+    const thumbnails = document.querySelectorAll(".thumbnail-image");
+    const mainImage = document.querySelector(".main-image");
+
+    // Event listener for thumbnail images
+    thumbnails.forEach(thumbnail => {
+      thumbnail.addEventListener("click", function () {
+        mainImage.src = thumbnail.src;
+      });
+    });
+
+    const minusBtn = document.querySelector(".minus");
+    const plusBtn = document.querySelector(".plus");
+    const quantityInput = document.querySelector(".quantity-input");
+
+    // Event listener for minus button
+    minusBtn.addEventListener("click", function () {
+      let quantity = parseInt(quantityInput.value);
+      if (quantity > 1) {
+        quantityInput.value = quantity - 1;
+      }
+    });
+
+    // Event listener for plus button
+    plusBtn.addEventListener("click", function () {
+      let quantity = parseInt(quantityInput.value);
+      quantityInput.value = quantity + 1;
+    });
+
+
+
+    const addToCartBtn = document.querySelector(".add-to-cart");
+    const buyNowBtn = document.querySelector(".buy-now");
+
+    // Event listener for Add to Cart button
+    addToCartBtn.addEventListener("click", function () {
+      // Add to Cart logic here
+      alert("Added to Cart!");
+    });
+
+    // Event listener for Buy Now button
+    buyNowBtn.addEventListener("click", function () {
+      // Buy Now logic here
+      alert("Buy Now!");
+    });
+  });
+
+  // Get the main image and thumbnail images
+  const mainImage = document.querySelector('.main-image img');
+  const thumbnailImages = document.querySelectorAll('.thumbnail-image img');
+
+  // Add click event listeners to thumbnail images
+  thumbnailImages.forEach(thumbnail => {
+    thumbnail.addEventListener('click', () => {
+      // Get the source of the clicked thumbnail image
+      const src = thumbnail.getAttribute('src');
+
+      // Set the source of the main image to the clicked thumbnail image
+      mainImage.setAttribute('src', src);
+    });
+  });
+</script>
+<style>
+  .product-detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .product-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 50px;
+  }
+
+  .product-images img {
+    width: 300px;
+    height: auto;
+  }
+
+  .thumbnail-images {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .thumbnail-image {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  .thumbnail-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .product-info {
+    width: 400px;
+  }
+
+  .product-name {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .product-rating {
+    color: gold;
+    margin-bottom: 10px;
+  }
+
+  .product-price {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .product-style {
+    margin-bottom: 10px;
+  }
+
+  .product-size {
+    margin-bottom: 10px;
+  }
+
+  .product-size p {
+    margin-bottom: 5px;
+  }
+
+  .product-quantity {
+    margin-bottom: 10px;
+  }
+
+  .quantity-controls {
+    display: flex;
+    align-items: center;
+  }
+
+  .quantity-controls button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: #f1f1f1;
+    cursor: pointer;
+  }
+
+  .quantity-input {
+    width: 50px;
+    text-align: center;
+    border: none;
+    margin: 0 10px;
+  }
+
+  .product-buttons {
+    margin-top: 20px;
+  }
+
+  .product-buttons button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+</style>
